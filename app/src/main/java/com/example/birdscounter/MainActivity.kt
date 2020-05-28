@@ -1,5 +1,6 @@
 package com.example.birdscounter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
+    @SuppressLint("CommitPrefEdits")
     private fun applyRed(){
         count = count?.plus(1)
         colour = "RED"
@@ -56,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         counter.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
         editor.putString ("COLOUR", colour)
     }
+    @SuppressLint("CommitPrefEdits")
     private fun applyGray(){
         count = count?.plus(1)
         colour = "GRAY"
@@ -66,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         editor.putString ("COLOUR", colour)
     }
 
+    @SuppressLint("CommitPrefEdits")
     private fun applyBlue(){
         count = count?.plus(1)
         colour = "BLUE"
@@ -76,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         editor.putString ("COLOUR", colour)
     }
 
+    @SuppressLint("CommitPrefEdits")
     private fun applyYellow(){
         count = count?.plus(1)
         colour = "YELLOW"
@@ -88,7 +93,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun reset(){
-        print("reset")
         count = 0
         counter.setBackgroundColor(ContextCompat.getColor(this, R.color.white))
         counter.text = "0"
